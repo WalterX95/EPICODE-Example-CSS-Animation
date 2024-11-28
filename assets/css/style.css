@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+}
+
+html,body {
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    font-family: "Indie Flower", cursive;
+}
+
+#container {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    background-color: grey;
+    height: 100vh;
+    flex-wrap: wrap;
+    font-size:larger;
+}
+
+
+.task {
+    background-color: #fff740;
+    width: 13%;
+    margin: 5%;
+    justify-items: center;
+    justify-content: center;
+    box-shadow: 10px 3px 35px -3px rgba(0,0,0,0.75);
+}
+
+.task:hover {
+    animation-name: post;
+    animation-duration: 2s;
+    animation-delay: 0.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.task:nth-child(even) {
+    background-color:#7afcff;
+    transform: rotate(35deg);
+}
+
+.task:nth-child(1) {
+    transform: rotate(25deg);
+}
+
+.task:nth-child(4) {
+    transform: rotate(25deg);
+}
+
+.task:nth-child(6) {
+    transform: rotate(45deg);
+}
+
+.task:nth-child(even):hover {
+    animation-name: postEven;
+    animation-duration: 2s;
+    animation-delay: 0.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.task:not(:hover) {
+    animation-name: postNotHover;
+    animation-duration: 2s;
+    animation-delay: 0.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.task:nth-child(even):not(:hover) {
+    animation-name: postNotHoverEven;
+    animation-duration: 2s;
+    animation-delay: 0.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes postEven {
+    from {
+        transform: rotate(35deg);
+    }
+    to {
+        transform: scale(2,2);
+    }    
+}
+
+
+@keyframes postNotHoverEven {
+    from {
+        transform: none;
+    }
+    to {
+        transform: scale(1,1);
+        transform: rotate(35deg);
+    }    
+}
+
+
+@keyframes postNotHover {
+    from {
+       transform: rotate(34deg);
+    }
+    to {
+        transform: scale(1,1);
+    }    
+}
+
+
+@keyframes post {
+    from {
+        transform: rotate(35deg);
+    }
+    to {
+        transform: scale(2,2);
+    }    
+}
+
